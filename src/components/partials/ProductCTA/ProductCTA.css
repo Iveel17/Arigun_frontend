@@ -1,0 +1,222 @@
+.product-cta-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 20px;
+    margin: 60px 0;
+  }
+  
+  .cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+    text-align: center;
+  }
+  
+  .cta-header {
+    margin-bottom: 40px;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .cta-description {
+    font-size: 1.1rem;
+    color: #6c7b7f;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .form-input::placeholder {
+    color: #adb5bd;
+  }
+  
+  .cta-button {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .cta-button:hover:not(.disabled) {
+    background: linear-gradient(135deg, #357abd 0%, #2c5282 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+  }
+  
+  .cta-button.disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .loading-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .privacy-note {
+    font-size: 0.9rem;
+    color: #6c7b7f;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  /* Success Message Styles */
+  .success-message {
+    text-align: center;
+    padding: 60px 40px;
+  }
+  
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 30px;
+    animation: successPulse 0.6s ease-out;
+  }
+  
+  @keyframes successPulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .success-message .cta-title {
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .product-cta-container {
+      padding: 60px 15px;
+      margin: 40px 0;
+    }
+    
+    .cta-content {
+      padding: 40px 25px;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+    }
+    
+    .cta-description {
+      font-size: 1rem;
+    }
+    
+    .form-input {
+      padding: 12px 15px;
+    }
+    
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cta-content {
+      padding: 30px 20px;
+    }
+    
+    .cta-title {
+      font-size: 1.8rem;
+    }
+    
+    .success-message {
+      padding: 40px 20px;
+    }
+    
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+  }

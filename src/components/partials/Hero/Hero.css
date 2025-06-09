@@ -1,0 +1,143 @@
+/* Hero Section Styles - Bottom Left Layout */
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end; /* Changed from center to flex-end */
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: flex-end; /* Changed from center to flex-end */
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  /* Hero Text Content */
+  .hero-text {
+    max-width: 400px;
+    margin-bottom: 10px; /* Add bottom margin for spacing from edge */
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+    color: #e5e7eb;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    font-weight: 400;
+  }
+  
+  /* Hero Buttons */
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 0;
+      min-height: 500px;
+      align-items: center; /* Center on mobile for better readability */
+    }
+    
+    .hero-container {
+      padding: 0 20px;
+    }
+    
+    .hero-content {
+      text-align: center;
+      align-items: center; /* Center content on mobile */
+    }
+    
+    .hero-text {
+      max-width: 100%;
+      margin-bottom: 0; /* Remove bottom margin on mobile */
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding: 40px 0;
+    }
+    
+    .hero-container {
+      padding: 0 16px;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-description {
+      font-size: 0.9rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      padding: 14px 24px;
+    }
+  }
