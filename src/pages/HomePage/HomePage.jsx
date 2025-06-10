@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../../components/partials/Header/Header';
+import Header from '../../components/partials/HomePartials/Header/Header';
 import './HomePage.css';
-import Hero from '../../components/partials/Hero/Hero';
+import Hero from '../../components/partials/HomePartials/Hero/Hero';
 import WhyUs from '../../components/partials/WhyUs/WhyUs';
-import ContactUs from '../../components/partials/ContactUs/ContactUs';
+import ContactUs from '../../components/partials/HomePartials/ContactUs/ContactUs';
 import Product from '../../components/partials/Product/Product';
 import ProductCTA from '../../components/partials/ProductCTA/ProductCTA';
-import Footer from '../../components/partials/Footer/Footer';
+import Footer from '../../components/partials/HomePartials/Footer/Footer';
 
 const HomePage = () => {
   return (

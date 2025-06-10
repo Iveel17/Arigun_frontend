@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom'; // Import Link
 import AuthSection from './../AuthSection/AuthSection';
-import Logo from '../../buttons/Logo/Logo';
+import Logo from '../../../buttons/Logo/Logo';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

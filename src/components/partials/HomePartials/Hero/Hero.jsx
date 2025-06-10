@@ -1,8 +1,8 @@
 import React from 'react';
 import './Hero.css';
 import youngBoyStudying from './young-boy-studying.jpg';
-import SignupButton from '../../buttons/SignupButton/SignupButton';
-import ExploreButton from '../../buttons/ExploreButton/ExploreButton';
+import SignupButton from '../../../buttons/SignupButton/SignupButton';
+import ExploreButton from '../../../buttons/ExploreButton/ExploreButton';
 
 const Hero = () => {
   return (
