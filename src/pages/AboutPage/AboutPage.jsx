@@ -5,7 +5,7 @@ import CeoWord from './CeoWord/CeoWord';
 
 const AboutPage = () => {
   return (
-    <div className="AboutPage">
+    <div className="aboutpage">
       <Header />
       <CeoWord  />
     </div>
