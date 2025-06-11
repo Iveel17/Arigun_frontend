@@ -1,0 +1,72 @@
+.hiring {
+    height: 80px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
+  }
+  
+  .hiring-container {
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    gap: 5px;
+  }
+  
+  .hiring-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .hiring-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hiring-button:hover {
+    background-color: #333333;
+  }
+  
+  .hiring-button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .hiring-container {
+      gap: 10px;
+      padding: 15px 20px;
+    }
+    
+    .hiring {
+      height: auto;
+      min-height: 80px;
+    }
+    
+    .hiring-title {
+      font-size: 1.25rem;
+    }
+    
+    .hiring-button {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+    }
+  }
