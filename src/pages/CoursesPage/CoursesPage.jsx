@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/partials/Header/Header';
+import CourseCard from './CourseCard/CourseCard';
 import './CoursesPage.css';
 
 const CoursesPage = () => {
@@ -232,41 +233,7 @@ const CoursesPage = () => {
           </div>
 
           {/* Courses Grid */}
-          <div className="courses-grid">
-            {filteredCourses.map(course => (
-              <div key={course.id} className="course-card">
-                {course.bestseller && (
-                  <div className="bestseller-badge">BESTSELLER</div>
-                )}
-                <div className="course-image">
-                  <img src={course.image} alt={course.title} />
-                </div>
-                <div className="course-info">
-                  <h3 className="course-title">{course.title}</h3>
-                  <p className="course-instructor">{course.instructor}</p>
-                  <div className="course-rating">
-                    <span className="rating-number">{course.rating}</span>
-                    <div className="stars">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className={`star ${i < Math.floor(course.rating) ? 'filled' : ''}`}>
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <span className="students-count">({course.students.toLocaleString()})</span>
-                  </div>
-                  <div className="course-meta">
-                    <span className="duration">{course.duration}</span>
-                    <span className="level">{course.level}</span>
-                  </div>
-                  <div className="course-price">
-                    <span className="current-price">${course.price}</span>
-                    <span className="original-price">${course.originalPrice}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CourseCard />
         </div>
       </div>
 
