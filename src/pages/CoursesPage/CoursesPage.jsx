@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/partials/Header/Header';
-import CourseCard from './CourseCard/CourseCard';
+import CoursesList from './CoursesList';
+import FilterModal from './FilterModal/FilterModal';
 import './CoursesPage.css';
 
 const CoursesPage = () => {
@@ -10,7 +11,7 @@ const CoursesPage = () => {
   const [selectedLevels, setSelectedLevels] = useState([]);
   const [filteredCourses, setFilteredCourses] = useState([]);
 
-  // Sample course data
+  // Move this to a separate file later if needed
   const courses = [
     {
       id: 1,
@@ -147,25 +148,22 @@ const CoursesPage = () => {
     { value: 'highest-rated', label: 'Highest Rated' }
   ];
 
-  // Filter and sort courses
+  // Your existing useEffect for filtering/sorting
   useEffect(() => {
     let filtered = [...courses];
 
-    // Apply category filter
     if (selectedCategories.length > 0) {
       filtered = filtered.filter(course => 
         selectedCategories.includes(course.category)
       );
     }
 
-    // Apply level filter
     if (selectedLevels.length > 0) {
       filtered = filtered.filter(course => 
         selectedLevels.includes(course.level)
       );
     }
 
-    // Apply sorting
     switch (sortBy) {
       case 'price-low':
         filtered.sort((a, b) => a.price - b.price);
@@ -217,7 +215,6 @@ const CoursesPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="courses-main">
         <div className="container">
           <div className="courses-controls">
@@ -232,94 +229,26 @@ const CoursesPage = () => {
             </button>
           </div>
 
-          {/* Courses Grid */}
-          <CourseCard />
+          {/* Use the new CoursesList component */}
+          <CoursesList courses={filteredCourses} />
         </div>
       </div>
 
-      {/* Filter Modal */}
-      {isFilterOpen && (
-        <div className="filter-overlay">
-          <div className="filter-modal">
-            <div className="filter-header">
-              <h2>FILTERS</h2>
-              <button 
-                className="close-button"
-                onClick={() => setIsFilterOpen(false)}
-              >
-                ×
-              </button>
-            </div>
-
-            <div className="filter-content">
-              {/* Sort By */}
-              <div className="filter-section">
-                <h3 className="filter-title">SORT BY: {getSortLabel(sortBy).toUpperCase()}</h3>
-                <div className="filter-options">
-                  {sortOptions.map(option => (
-                    <label key={option.value} className="filter-option">
-                      <input
-                        type="radio"
-                        name="sort"
-                        value={option.value}
-                        checked={sortBy === option.value}
-                        onChange={(e) => setSortBy(e.target.value)}
-                      />
-                      <span className="checkmark"></span>
-                      {option.label}
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Category Filter */}
-              <div className="filter-section">
-                <h3 className="filter-title">CATEGORY</h3>
-                <div className="filter-options">
-                  {categories.map(category => (
-                    <label key={category.name} className="filter-option">
-                      <input
-                        type="checkbox"
-                        checked={selectedCategories.includes(category.name)}
-                        onChange={() => handleCategoryChange(category.name)}
-                      />
-                      <span className="checkmark"></span>
-                      {category.name} ({category.count})
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Level Filter */}
-              <div className="filter-section">
-                <h3 className="filter-title">LEVEL</h3>
-                <div className="filter-options">
-                  {levels.map(level => (
-                    <label key={level.name} className="filter-option">
-                      <input
-                        type="checkbox"
-                        checked={selectedLevels.includes(level.name)}
-                        onChange={() => handleLevelChange(level.name)}
-                      />
-                      <span className="checkmark"></span>
-                      {level.name} ({level.count})
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="filter-footer">
-              <button 
-                className="apply-filters-button"
-                onClick={() => setIsFilterOpen(false)}
-              >
-                VIEW {filteredCourses.length} COURSES
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <FilterModal
+        isOpen={isFilterOpen}
+        onClose={() => setIsFilterOpen(false)}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        selectedCategories={selectedCategories}
+        selectedLevels={selectedLevels}
+        filteredCoursesCount={filteredCourses.length}
+        categories={categories}
+        levels={levels}
+        sortOptions={sortOptions}
+        onCategoryChange={handleCategoryChange}
+        onLevelChange={handleLevelChange}
+        getSortLabel={getSortLabel}
+      />
     </div>
   );
 };
