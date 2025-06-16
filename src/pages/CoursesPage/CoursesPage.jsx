@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/partials/Header/Header';
-import CoursesList from './CoursesList';
+import CoursesList from './CoursesList/CoursesList';
 import FilterModal from './FilterModal/FilterModal';
 import './CoursesPage.css';
 

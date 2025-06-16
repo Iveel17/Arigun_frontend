@@ -1,5 +1,6 @@
 import React from 'react';
-import CourseCard from './CourseCard/CourseCard';
+import './CoursesList.css'
+import CourseCard from '../CourseCard/CourseCard';
 
 const CoursesList = ({ courses }) => {
   return (
