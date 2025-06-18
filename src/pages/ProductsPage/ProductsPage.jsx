@@ -211,7 +211,7 @@ const ProductsPage = () => {
       <Header />
       <div className="products-header">
         <div className="container">
-          <h1>ALL COURSES</h1>
+          <h1>ALL PRODUCTS</h1>
         </div>
       </div>
 
@@ -219,7 +219,7 @@ const ProductsPage = () => {
         <div className="container">
           <div className="products-controls">
             <div className="products-count">
-              ALL COURSES
+              ALL PRODUCTS
             </div>
             <button 
               className="filter-button"

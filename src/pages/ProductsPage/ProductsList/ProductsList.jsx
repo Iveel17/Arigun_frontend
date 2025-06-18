@@ -1,8 +1,8 @@
 import React from 'react';
-import './ProductList.css'
+import './ProductsList.css'
 import ProductCard from '../ProductCard/ProductCard';
 
-const ProductList = ({ products }) => {
+const ProductsList = ({ products }) => {
   return (
     <div className="products-grid">
       {products?.filter(product => product && product.id).map(product => (
@@ -12,4 +12,4 @@ const ProductList = ({ products }) => {
   );
 };
 
-export default ProductList;
+export default ProductsList;
