@@ -211,7 +211,7 @@ const LiveLessonsPage = () => {
       <Header />
       <div className="live_lessons-header">
         <div className="container">
-          <h1>ALL COURSES</h1>
+          <h1>ALL LIVE LESSONS</h1>
         </div>
       </div>
 
@@ -219,7 +219,7 @@ const LiveLessonsPage = () => {
         <div className="container">
           <div className="live_lessons-controls">
             <div className="live_lessons-count">
-              ALL COURSES
+              ALL LIVE LESSONS
             </div>
             <button 
               className="filter-button"
