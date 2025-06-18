@@ -8,7 +8,7 @@ const FilterModal = ({
   setSortBy,
   selectedCategories,
   selectedLevels,
-  filteredProductsCount,
+  filteredClassesCount,
   categories,
   levels,
   sortOptions,
@@ -88,7 +88,7 @@ const FilterModal = ({
 
         <div className="filter-footer">
           <button className="apply-filters-button" onClick={onClose}>
-            VIEW {filteredProductsCount} PRODUCTS
+            VIEW {filteredClassesCount} CLASSES
           </button>
         </div>
       </div>
