@@ -5,6 +5,8 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import CoursesPage from './pages/CoursesPage/CoursesPage';
 import LiveLessonsPage from './pages/LiveLessonsPage/LiveLessonsPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import SignupPage from './pages/SignupPage/SignupPage';
 
 import './App.css';
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/live-lessons" element={<LiveLessonsPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         {/* Add more routes here as needed */}        
       </Routes>
     </Router>
