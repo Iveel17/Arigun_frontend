@@ -10,7 +10,6 @@ const FilterModal = ({
   selectedLevels,
   filteredProductsCount,
   categories,
-  levels,
   sortOptions,
   onCategoryChange,
   onLevelChange,
@@ -62,24 +61,6 @@ const FilterModal = ({
                   />
                   <span className="checkmark"></span>
                   {category.name} ({category.count})
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Level Section */}
-          <div className="filter-section">
-            <h3 className="filter-title">LEVEL</h3>
-            <div className="filter-options">
-              {levels.map(level => (
-                <label key={level.name} className="filter-option">
-                  <input
-                    type="checkbox"
-                    checked={selectedLevels.includes(level.name)}
-                    onChange={() => onLevelChange(level.name)}
-                  />
-                  <span className="checkmark"></span>
-                  {level.name} ({level.count})
                 </label>
               ))}
             </div>
