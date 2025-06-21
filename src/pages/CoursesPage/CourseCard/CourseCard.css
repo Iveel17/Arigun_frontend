@@ -42,30 +42,32 @@
   z-index: 2;
 }
 
-.bestseller-badge {
-  left: 12px;
-  background-color: #ff6b35;
-  color: white;
-}
-
-.discount-badge {
-  left: 12px;
-  top: 50px; /* Position below bestseller badge */
-  background-color: #28a745;
-  color: white;
-}
-
-/* Remove the conditional positioning rule */
-
 .course-info {
   padding: 20px;
+  text-align: center;
+}
+
+/* Course header with ID and Title on same line */
+.course-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.course-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0;
 }
 
 .course-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 8px;
+  margin: 0;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -74,33 +76,25 @@
   overflow: hidden;
 }
 
-.course-instructor {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.course-meta {
+/* Course details section */
+.course-details {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  font-size: 0.85rem;
-  color: #888;
-}
-
-.course-duration,
-.course-level {
-  background-color: #f8f9fa;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.course-pricing {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
+}
+
+.course-price-line,
+.course-level-line {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+}
+
+.price-icon,
+.level-icon {
+  font-size: 1rem;
 }
 
 .course-price {
@@ -109,10 +103,24 @@
   color: #333;
 }
 
+.course-level {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
 .course-original-price {
   font-size: 1rem;
   color: #999;
   text-decoration: line-through;
+}
+
+/* Remove old meta styles since we're restructuring */
+.course-meta {
+  display: none;
 }
 
 /* Responsive Design */
@@ -121,6 +129,12 @@
     padding: 16px;
   }
   
+  .course-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .course-id,
   .course-title {
     font-size: 1rem;
   }
@@ -135,14 +149,13 @@
 }
 
 @media (max-width: 480px) {
-  .course-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
   .course-badge {
     font-size: 0.7rem;
     padding: 3px 6px;
+  }
+  
+  .course-price-line,
+  .course-level-line {
+    gap: 6px;
   }
 }

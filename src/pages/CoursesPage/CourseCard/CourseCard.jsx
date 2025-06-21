@@ -15,36 +15,24 @@ const CourseCard = ({ course }) => {
           alt={course.title}
           className="course-image"
         />
-        
-        {/* Bestseller badge */}
-        {course.bestseller && (
-          <div className="course-badge bestseller-badge">
-            BESTSELLER
-          </div>
-        )}
-        
-        {/* Discount badge */}
-        {discountPercentage > 0 && (
-          <div className="course-badge discount-badge">
-            {discountPercentage}% OFF
-          </div>
-        )}
       </div>
 
       <div className="course-info">
-        <h3 className="course-title">{course.title}</h3>
-        <p className="course-instructor">{course.instructor}</p>
-        
-        <div className="course-meta">
-          <span className="course-duration">{course.duration}</span>
-          <span className="course-level">{course.level}</span>
+        <div className="course-header">
+          <span className="course-id">{course.id}</span>
+          <h3 className="course-title">{course.title}</h3>
         </div>
-
-        <div className="course-pricing">
-          <span className="course-price">${course.price}</span>
-          {course.originalPrice && course.originalPrice > course.price && (
-            <span className="course-original-price">${course.originalPrice}</span>
-          )}
+        
+        <div className="course-details">
+          <div className="course-price-line">
+            <span className="price-icon">💰</span>
+            <span className="course-price">${course.price}</span>
+          </div>
+          
+          <div className="course-level-line">
+            <span className="level-icon">📊</span>
+            <span className="course-level">{course.level}</span>
+          </div>
         </div>
       </div>
     </div>
