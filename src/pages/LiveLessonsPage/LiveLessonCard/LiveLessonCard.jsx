@@ -2,42 +2,39 @@ import React from 'react';
 import './LiveLessonCard.css';
 
 const LiveLessonCard = ({ live_lesson }) => {
-  // Add error handling for undefined live_lesson
-  if (!live_lesson) {
-    return null;
-  }
+  // Calculate discount percentage
+  const discountPercentage = live_lesson.originalPrice 
+    ? Math.round(((live_lesson.originalPrice - live_lesson.price) / live_lesson.originalPrice) * 100)
+    : 0;
 
   return (
     <div className="live_lesson-card">
-      {live_lesson.bestseller && (
-        <div className="bestseller-badge">BESTSELLER</div>
-      )}
-      <div className="live_lesson-image">
-        <img src={live_lesson.image} alt={live_lesson.title} />
+      <div className="live_lesson-image-container">
+        <img 
+          src={live_lesson.image} 
+          alt={live_lesson.title}
+          className="live_lesson-image"
+        />
       </div>
+
       <div className="live_lesson-info">
-        <h3 className="live_lesson-title">{live_lesson.title}</h3>
-        <p className="live_lesson-instructor">{live_lesson.instructor}</p>
-        <div className="live_lesson-rating">
-          <span className="rating-number">{live_lesson.rating}</span>
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className={`star ${i < Math.floor(live_lesson.rating) ? 'filled' : ''}`}>
-                ★
-              </span>
-            ))}
+        <div className="live_lesson-header">
+          <span className="live_lesson-id">{live_lesson.id}</span>
+          <h3 className="live_lesson-title">{live_lesson.title}</h3>
+        </div>
+        <div className="live_lesson-lower">
+          <div className="live_lesson-details">
+            <div className="live_lesson-price-line">
+              <span className="price-icon">💰</span>
+              <span className="live_lesson-price">${live_lesson.price}</span>
+            </div>
+            
+            <div className="live_lesson-student-line">
+              <span className="level-icon">🧑‍🎓</span>
+              <span className="live_lesson-student">{live_lesson.students}/{live_lesson.totalStudents}</span>
+            </div>
           </div>
-          <span className="students-count">({live_lesson.students?.toLocaleString() || '0'})</span>
-        </div>
-        <div className="live_lesson-meta">
-          <span className="duration">{live_lesson.duration}</span>
-          <span className="level">{live_lesson.level}</span>
-        </div>
-        <div className="live_lesson-price">
-          <span className="current-price">${live_lesson.price}</span>
-          {live_lesson.originalPrice && (
-            <span className="original-price">${live_lesson.originalPrice}</span>
-          )}
+          <button className="enroll-btn">Enroll</button>          
         </div>
       </div>
     </div>
