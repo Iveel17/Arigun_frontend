@@ -21,12 +21,6 @@ const CourseCard = ({ course, onCourseClick }) => {
           alt={course.title}
           className="course-image"
         />
-        {course.bestseller && (
-          <span className="bestseller-badge">Bestseller</span>
-        )}
-        {discountPercentage > 0 && (
-          <span className="discount-badge">{discountPercentage}% OFF</span>
-        )}
       </div>
 
       <div className="course-info">
