@@ -31,31 +31,22 @@ const CourseCard = ({ course, onCourseClick }) => {
 
       <div className="course-info">
         <div className="course-header">
-          <span className="course-id">#{course.id}</span>
+          <span className="course-id">{course.id}</span>
           <h3 className="course-title">{course.title}</h3>
-          <p className="course-instructor">by {course.instructor}</p>
         </div>
-        
-        <div className="course-details">
-          <div className="course-price-line">
-            <span className="price-icon">💰</span>
-            <div className="price-container">
+        <div className="course-lower">
+          <div className="course-details">
+            <div className="course-price-line">
+              <span className="price-icon">💰</span>
               <span className="course-price">${course.price}</span>
-              {course.originalPrice && (
-                <span className="original-price">${course.originalPrice}</span>
-              )}
+            </div>
+            
+            <div className="course-student-line">
+              <span className="level-icon">📊</span>
+              <span className="course-duration">{course.duration}</span>
             </div>
           </div>
-          
-          <div className="course-level-line">
-            <span className="level-icon">📊</span>
-            <span className="course-level">{course.level}</span>
-          </div>
-
-          <div className="course-duration-line">
-            <span className="duration-icon">⏱️</span>
-            <span className="course-duration">{course.duration}</span>
-          </div>
+          <button className="enroll-btn">Enroll</button>          
         </div>
       </div>
     </div>
