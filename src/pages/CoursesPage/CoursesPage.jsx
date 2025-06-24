@@ -90,7 +90,8 @@ const CoursesPage = () => {
   const sortOptions = [
     { value: 'price-low', label: 'Price (Lowest First)' },
     { value: 'price-high', label: 'Price (Highest First)' },
-    { value: 'newest', label: 'Newest' }
+    { value: 'newest', label: 'Newest' },
+    { value: 'oldest', label: 'Oldest' }
   ];
 
   // Course modal handlers
@@ -126,6 +127,9 @@ const CoursesPage = () => {
         break;
       case 'price-high':
         filtered.sort((a, b) => b.price - a.price);
+        break;
+      case 'oldest':
+        filtered.sort((a, b) => a.id - b.id);
         break;
       case 'newest':
       default:
