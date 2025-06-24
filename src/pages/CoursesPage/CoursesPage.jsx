@@ -42,6 +42,8 @@ const CoursesPage = () => {
       category: "Programming",
       level: "Beginner",
       duration: "42 hours",
+      students: 12,
+      totalStudents: 27,
       bestseller: true,
       description: "Master JavaScript from basics to advanced concepts with hands-on projects and real-world applications."
     },
@@ -55,6 +57,8 @@ const CoursesPage = () => {
       category: "Programming",
       level: "Advanced",
       duration: "38 hours",
+      students: 10,
+      totalStudents: 23,
       bestseller: false,
       description: "Take your React skills to the next level with advanced patterns, hooks, and performance optimization."
     },
@@ -68,6 +72,8 @@ const CoursesPage = () => {
       category: "Marketing",
       level: "Beginner",
       duration: "28 hours",
+      students: 122,
+      totalStudents: 211,
       bestseller: true,
       description: "Learn the essentials of digital marketing including SEO, social media, and content marketing strategies."
     },

@@ -89,16 +89,15 @@
     margin-bottom: 0;
   }
   
-  .detail-label {
-    font-weight: 600;
-    color: #333;
-    font-size: 14px;
+  .detail-icon {
+    size: 2rem;
   }
-  
+
   .detail-value {
     color: #666;
     font-size: 14px;
     text-align: right;
+    margin-left: 8px;
   }
   
   .bestseller-badge {
