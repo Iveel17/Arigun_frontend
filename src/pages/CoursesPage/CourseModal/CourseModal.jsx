@@ -22,11 +22,11 @@ const CourseModal = ({ course, isOpen, onClose }) => {
           ×
         </button>
         
-        <div className="course-image-container">
+        <div className="course-modal-image-container">
         <img 
           src={course.image} 
           alt={course.title}
-          className="course-image"
+          className="course-modal-image"
         />
       </div>
 
@@ -35,29 +35,29 @@ const CourseModal = ({ course, isOpen, onClose }) => {
           <h3 className="course-modal-title">#{course.id} {course.title}</h3>
           <h1 className="course-modal-description">{course.description}</h1>
         </div>
-        <div className="course-lower">
-          <div className="course-details">
-            <div className="course-student-line">
+        <div className="course-modal-lower">
+          <div className="course-modal-details">
+            <div className="course-modal-detail-item">
               <span className="detail-icon">📊</span>
               <span className="detail-value">{course.level}</span>
             </div>
 
-            <div className="course-price-line">
+            <div className="course-modal-detail-item">
               <span className="detail-icon">💰</span>
               <span className="detail-value">${course.price}</span>
             </div>
 
-            <div className="course-duration-line">
+            <div className="course-modal-detail-item">
               <span className="detail-icon">⏲️</span>
               <span className="detail-value">{course.duration}</span>
             </div>
             
-            <div className="course-students-line">
+            <div className="course-modal-detail-item">
               <span className="detail-icon">🧑‍🎓</span>
               <span className="detail-value">{course.students}/{course.totalStudents}</span>
             </div>
           </div>
-          <button className="enroll-btn">Enroll</button>          
+          <button className="modal-enroll-btn">Enroll</button>          
         </div>
       </div>
       </div>

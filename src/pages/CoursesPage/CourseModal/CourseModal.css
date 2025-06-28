@@ -47,7 +47,19 @@
     background-color: #f0f0f0;
     color: #333;
   }
-  
+  .course-modal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .course-modal-image {
+    width: 80%;
+    height: 150px;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 20px;
+
+  }
   .course-modal-content {
     padding: 30px;
   }
@@ -70,22 +82,28 @@
     line-height: 1.5;
     margin: 0;
   }
-  
+
+  .course-modal-lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   .course-modal-details {
-    margin-bottom: 25px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
   }
   
-  .course-detail-item {
+  .course-modal-detail-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    padding: 8px 0;
+    padding: 4px 0;
   }
   
-  .course-detail-item:last-child {
+  .course-modal-detail-item:last-child {
     margin-bottom: 0;
   }
   
@@ -94,10 +112,11 @@
   }
 
   .detail-value {
+    margin-left: 3vh;
     color: #666;
     font-size: 14px;
-    text-align: right;
-    margin-left: 8px;
+    width: 20vh;
+    text-align: left;
   }
   
   .bestseller-badge {
@@ -156,45 +175,23 @@
     flex-wrap: wrap;
   }
   
-  .start-button {
-    flex: 1;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
+  .modal-enroll-btn {
+    margin-top: 10vh;
+    padding: 10px 20px;
     border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 120px;
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #ddd;
   }
   
-  .start-button:hover {
-    background: linear-gradient(135deg, #0056b3, #003d82);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-  }
-  
-  .view-details-button {
-    flex: 1;
-    background: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 120px;
-  }
-  
-  .view-details-button:hover {
-    background: #007bff;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+  .modal-enroll-btn:hover {
+    background-color: #ffffff;
+    border-color: #007bff;
   }
   
   /* Animations */
