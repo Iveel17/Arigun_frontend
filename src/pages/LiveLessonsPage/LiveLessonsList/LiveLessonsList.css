@@ -1,6 +1,21 @@
 .live_lessons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .live_lessons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
   }
+}
+
+@media (max-width: 480px) {
+  .live_lessons-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

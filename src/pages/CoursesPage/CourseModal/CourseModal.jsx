@@ -53,8 +53,8 @@ const CourseModal = ({ course, isOpen, onClose }) => {
             </div>
             
             <div className="course-modal-detail-item">
-              <span className="detail-icon">🧑‍🎓</span>
-              <span className="detail-value">{course.students}/{course.totalStudents}</span>
+              <span className="detail-icon">👩‍🏫</span>
+              <span className="detail-value">{course.instructor}</span>
             </div>
           </div>
           <button className="modal-enroll-btn">Enroll</button>          

@@ -148,6 +148,7 @@
   justify-content: space-between;
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .live_lesson-info {
@@ -180,7 +181,7 @@
   }
   
   .live_lesson-price-line,
-  .live_lesson-student-line {
+  .live_lesson-level-line {
     gap: 6px;
   }
 }

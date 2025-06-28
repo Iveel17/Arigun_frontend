@@ -1,14 +1,20 @@
 import React from 'react';
 import './LiveLessonCard.css';
 
-const LiveLessonCard = ({ live_lesson }) => {
+const LiveLessonCard = ({ live_lesson, onLiveLessonClick }) => {
   // Calculate discount percentage
   const discountPercentage = live_lesson.originalPrice 
     ? Math.round(((live_lesson.originalPrice - live_lesson.price) / live_lesson.originalPrice) * 100)
     : 0;
 
+  const handleClick = () => {
+    if (onLiveLessonClick) {
+      onLiveLessonClick(live_lesson);
+    }
+  };
+
   return (
-    <div className="live_lesson-card">
+    <div className="live_lesson-card" onClick={handleClick}>
       <div className="live_lesson-image-container">
         <img 
           src={live_lesson.image} 
@@ -30,8 +36,8 @@ const LiveLessonCard = ({ live_lesson }) => {
             </div>
             
             <div className="live_lesson-student-line">
-              <span className="level-icon">🧑‍🎓</span>
-              <span className="live_lesson-student">{live_lesson.students}/{live_lesson.totalStudents}</span>
+              <span className="level-icon">📊</span>
+              <span className="live_lesson-duration">{live_lesson.duration}</span>
             </div>
           </div>
           <button className="enroll-btn">Enroll</button>          
