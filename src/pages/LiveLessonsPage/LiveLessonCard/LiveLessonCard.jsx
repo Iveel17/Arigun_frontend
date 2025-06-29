@@ -36,8 +36,8 @@ const LiveLessonCard = ({ live_lesson, onLiveLessonClick }) => {
             </div>
             
             <div className="live_lesson-student-line">
-              <span className="level-icon">📊</span>
-              <span className="live_lesson-duration">{live_lesson.duration}</span>
+              <span className="level-icon">🧑‍🎓</span>
+              <span className="live_lesson-duration">{live_lesson.students}/{live_lesson.totalStudents}</span>
             </div>
           </div>
           <button className="enroll-btn">Enroll</button>          
