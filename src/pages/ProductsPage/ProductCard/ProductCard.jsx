@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
               <span className="original-price">${product.originalPrice}</span>
             )}
           </div>
-          <button className="add-to-kart-btn">Add to Kart</button>
+          <button className="add-to-kart-btn">🛒</button>
         </div>
         
       </div>
