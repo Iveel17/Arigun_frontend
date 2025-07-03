@@ -20,6 +20,7 @@ const Header = () => {
           <Link to='/products' className="nav-link">Products</Link>
           <Link to='/live-lessons' className="nav-link">Live-lessons</Link>
           <Link to='/about' className="nav-link">About</Link>
+          <Link to='/cart' className="nav-link">🛒</Link>
         </nav>
 
         {/* Auth Buttons */}
