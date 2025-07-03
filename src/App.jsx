@@ -7,6 +7,7 @@ import LiveLessonsPage from './pages/LiveLessonsPage/LiveLessonsPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
+import CartPage from './pages/CartPage/CartPage';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="cart" element={<CartPage />} />
         {/* Add more routes here as needed */}        
       </Routes>
     </Router>
