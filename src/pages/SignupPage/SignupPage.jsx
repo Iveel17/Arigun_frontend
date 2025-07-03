@@ -1,95 +1,97 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './SignupPage.css';
 
 const SignupPage = () => {
   return (
     <div className="signup-container">
       <div className="signup-card">
-        <div className="signup-left">
-          <h1 className="signup-title">Ready to start your success story?</h1>
-          <p className="signup-subtitle">
-            Signup to our website and start leafing through your favorite literature today!
-          </p>
-          
-          <form className="signup-form">
-            <div className="form-group">
-              <label className="form-label">Full name</label>
-              <input 
-                type="text" 
-                className="form-input" 
-                placeholder="Jane Doe"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label className="form-label">Username</label>
-              <input 
-                type="text" 
-                className="form-input" 
-                placeholder="janedoe123"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label className="form-label">Email</label>
-              <input 
-                type="email" 
-                className="form-input" 
-                placeholder="janedoe@mail.com"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label className="form-label">Password</label>
-              <input 
-                type="password" 
-                className="form-input" 
-                placeholder="Enter your password"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label className="form-label">Re-enter Password</label>
-              <input 
-                type="password" 
-                className="form-input" 
-                placeholder="Confirm your password"
-              />
-            </div>
-            
-            <div className="checkbox-group">
-              <input 
-                type="checkbox" 
-                id="terms" 
-                className="checkbox-input"
-              />
-              <label htmlFor="terms" className="checkbox-label">
-                I agree to the <a href="#terms">Terms & Conditions</a>
-              </label>
-            </div>
-            
-            <button type="submit" className="signup-button">
-              Sign up
-            </button>
-          </form>
-          
-          <div className="login-link">
-            Already have an account? <Link to='/login'>Log in</Link>
-          </div>
+        <div className="signup-header">
+          <h1 className="signup-title">Join Our Community </h1>
+          <p className="signup-subtitle">Create your account</p>
         </div>
         
-        <div className="signup-right">
-          <div className="background-shapes">
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-            <div className="shape shape-3"></div>
+        <div className="signup-form">
+          <div className="name-row">
+            <div className="form-group">
+              <div className="form-label">
+                First Name
+              </div>
+              <input
+                type="text"
+                className="form-input"
+                placeholder="John"
+              />
+            </div>
+            <div className="form-group">
+              <div className="form-label">
+                Last Name
+              </div>
+              <input
+                type="text"
+                className="form-input"
+                placeholder="Doe"
+              />
+            </div>
           </div>
-          <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-            alt="Reading illustration" 
-            className="illustration"
-          />
+          
+          <div className="form-group">
+            <div className="form-label">
+              Email Address
+            </div>
+            <input
+              type="email"
+              className="form-input"
+              placeholder="john@example.com"
+            />
+          </div>
+          
+          <div className="form-group">
+            <div className="form-label">
+              Password
+            </div>
+            <input
+              type="password"
+              className="form-input"
+              placeholder="Create a strong password"
+            />
+          </div>
+          
+          <div className="form-group">
+            <div className="form-label">
+              Confirm Password
+            </div>
+            <input
+              type="password"
+              className="form-input"
+              placeholder="Confirm your password"
+            />
+          </div>
+          
+          <div className="terms-group">
+            <input type="checkbox" className="form-checkbox" />
+            <span className="terms-text">
+              I agree to the{' '}
+              <button className="terms-link">
+                Terms of Service
+              </button>{' '}
+              and{' '}
+              <button className="terms-link">
+                Privacy Policy
+              </button>
+            </span>
+          </div>
+          
+          <button className="submit-btn">
+            Create Account
+          </button>
+        </div>
+        
+        <div className="signup-footer">
+          <p className="footer-text">
+            Already have an account?{' '}
+            <Link to='/login' className="link-btn">Log in</Link>
+          </p>
         </div>
       </div>
     </div>
