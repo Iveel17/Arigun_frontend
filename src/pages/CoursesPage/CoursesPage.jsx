@@ -102,6 +102,7 @@ const CoursesPage = () => {
 
   // Course modal handlers
   const handleCourseClick = (course) => {
+    console.log('Selected course:', course.id); // Temporary debug log
     setSelectedCourse(course);
     setIsCourseModalOpen(true);
   };

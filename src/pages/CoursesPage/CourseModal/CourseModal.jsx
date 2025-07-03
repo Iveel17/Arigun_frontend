@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CourseModal.css';
 
 const CourseModal = ({ course, isOpen, onClose }) => {
@@ -57,7 +58,9 @@ const CourseModal = ({ course, isOpen, onClose }) => {
               <span className="detail-value">{course.instructor}</span>
             </div>
           </div>
-          <button className="modal-enroll-btn">Enroll</button>          
+          <button className="modal-enroll-btn">
+            <Link to={`/courses/${course.id}`} className="enroll-link">Enroll</Link>
+          </button>          
         </div>
       </div>
       </div>
