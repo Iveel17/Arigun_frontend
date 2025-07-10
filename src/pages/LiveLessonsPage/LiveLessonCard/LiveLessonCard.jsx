@@ -1,5 +1,6 @@
 import React from 'react';
 import './LiveLessonCard.css';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const LiveLessonCard = ({ live_lesson, onLiveLessonClick }) => {
   // Calculate discount percentage
@@ -40,7 +41,7 @@ const LiveLessonCard = ({ live_lesson, onLiveLessonClick }) => {
               <span className="live_lesson-duration">{live_lesson.students}/{live_lesson.totalStudents}</span>
             </div>
           </div>
-          <button className="enroll-btn">Enroll</button>          
+          <ButtonA text="Enroll" className="live_lesson-btn" />        
         </div>
       </div>
     </div>

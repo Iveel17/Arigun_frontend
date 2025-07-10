@@ -85,18 +85,6 @@
     line-height: 1.5;
   }
   
-  .contact-link {
-    color: #2563eb;
-    text-decoration: underline;
-    font-size: 0.9rem; /* Reduced from 0.95rem */
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  .contact-link:hover {
-    color: #1d4ed8;
-  }
-  
   /* New style for copyable text (email, phone, social handles) */
   .contact-text {
     color: #374151;
@@ -106,23 +94,7 @@
     cursor: text;
     line-height: 1.4;
   }
-  
-  .directions-link {
-    background: none;
-    border: none;
-    color: #2563eb;
-    font-size: 0.9rem; /* Reduced from 0.95rem */
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.2s ease;
-    font-family: inherit;
-  }
-  
-  .directions-link:hover {
-    color: #1d4ed8;
-  }
-  
+
   .map-container {
     position: relative;
     height: 400px;

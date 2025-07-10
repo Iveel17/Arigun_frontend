@@ -50,19 +50,9 @@
     margin: 0 auto;
     background: white;
   }
-  
-  .checkmark {
-    font-size: 24px;
-    color: #10b981;
-    font-weight: bold;
-  }
-  
-  .clock-icon {
+
+  .check-icon, .clock-icon, .monitor-icon {
     font-size: 20px;
-  }
-  
-  .monitor-icon {
-    font-size: 18px;
   }
   
   .feature-title {
@@ -80,30 +70,6 @@
     line-height: 1.6;
     margin-bottom: 25px;
     font-weight: 400;
-  }
-  
-  .feature-link {
-    color: #2563eb;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.2s ease;
-  }
-  
-  .feature-link:hover {
-    color: #1d4ed8;
-  }
-  
-  .arrow {
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
-  }
-  
-  .feature-link:hover .arrow {
-    transform: translateX(2px);
   }
   
   /* Responsive Design */

@@ -65,20 +65,3 @@
     color: #999;
     text-decoration: line-through;
   }
-  .add-to-kart-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: transparent;
-    color: #333;
-    border: 2px solid #ddd;
-  }
-  
-  .add-to-kart-btn:hover {
-    background-color: #ffffff;
-    border-color: #007bff;
-  }

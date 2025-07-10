@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductCard.css';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const ProductCard = ({ product }) => {
   // Add error handling for undefined product
@@ -22,7 +23,7 @@ const ProductCard = ({ product }) => {
               <span className="original-price">${product.originalPrice}</span>
             )}
           </div>
-          <button className="add-to-kart-btn">🛒</button>
+          <ButtonA text="Buy" className="product-btn"/>
         </div>
         
       </div>

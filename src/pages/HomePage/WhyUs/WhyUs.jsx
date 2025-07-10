@@ -1,6 +1,7 @@
 import React from 'react';
 import './WhyUs.css';
 import { Link } from 'react-router-dom'; 
+import LinkA from '../../../components/buttons/LinkA/LinkA'; // Assuming LinkA is a custom component for links
 
 const WhyUs = () => {
   return (
@@ -14,19 +15,16 @@ const WhyUs = () => {
           <div className="feature-item">
             <div className="feature-icon">
               <div className="icon-circle">
-                <span className="checkmark">✓</span>
+                <span className="check-icon">✓</span>
               </div>
             </div>
             <h3 className="feature-title">
-              Learn from the Best: Expert Tutors at Your Service
+              Study at Your Own Pace with Flexible Learning Schedules
             </h3>
             <p className="feature-description">
-              Our platform offers engaging video courses designed to elevate your learning experience.
+              Customize your learning journey with schedules that fit your lifestyle.
             </p>
-            <div className="feature-link">
-                    <Link to="/courses" className="explore-link">Explore</Link>
-               <span className="arrow">→</span>
-            </div>
+            <LinkA text="Explore"/>
           </div>
 
           <div className="feature-item">
@@ -41,10 +39,7 @@ const WhyUs = () => {
             <p className="feature-description">
               Customize your learning journey with schedules that fit your lifestyle.
             </p>
-            <div className="feature-link">
-                    <Link to="/courses" className="explore-link">Explore</Link> 
-                <span className="arrow">→</span>
-            </div>
+            <LinkA text="Explore"/>
           </div>
 
           <div className="feature-item">
@@ -59,10 +54,7 @@ const WhyUs = () => {
             <p className="feature-description">
               Access a wealth of resources that enhance your understanding and retention.
             </p>
-            <div className="feature-link">
-                <Link to="/courses" className="explore-link">Explore</Link> 
-              <span className="arrow">→</span>
-            </div>
+            <LinkA text="Explore"/>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './LiveLessonModal.css';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
   if (!isOpen || !live_lesson) return null;
@@ -57,7 +58,7 @@ const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
               <span className="detail-value">{live_lesson.students}/{live_lesson.totalStudents}</span>
             </div>
           </div>
-          <button className="modal-enroll-btn">Enroll</button>          
+          <ButtonA text="Buy" className="live_lesson-modal-btn"/>        
         </div>
       </div>
       </div>

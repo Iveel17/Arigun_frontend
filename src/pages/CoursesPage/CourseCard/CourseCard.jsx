@@ -1,5 +1,6 @@
 import React from 'react';
 import './CourseCard.css';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const CourseCard = ({ course, onCourseClick }) => {
   // Calculate discount percentage
@@ -40,7 +41,7 @@ const CourseCard = ({ course, onCourseClick }) => {
               <span className="course-duration">{course.duration}</span>
             </div>
           </div>
-          <button className="enroll-btn">Enroll</button>          
+          <ButtonA text="Enroll" className="card-btn"/>       
         </div>
       </div>
     </div>

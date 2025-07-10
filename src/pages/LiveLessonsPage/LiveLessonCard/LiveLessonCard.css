@@ -123,24 +123,10 @@
   display: none;
 }
 
-.enroll-btn {
+.live_lesson-btn {
   margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
-  color: #333;
-  border: 2px solid #ddd;
 }
 
-.enroll-btn:hover {
-  background-color: #ffffff;
-  border-color: #007bff;
-}
 
 .live_lesson-lower {
   display: flex;

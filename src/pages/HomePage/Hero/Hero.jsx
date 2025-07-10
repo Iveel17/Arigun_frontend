@@ -1,8 +1,8 @@
 import React from 'react';
 import './Hero.css';
 import youngBoyStudying from './young-boy-studying.jpg';
-import SignupButton from '../../../components/buttons/SignupButton/SignupButton';
-import ExploreButton from '../../../components/buttons/ExploreButton/ExploreButton';
+import ButtonB from '../../../components/buttons/ButtonB/ButtonB';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const Hero = () => {
   return (
@@ -19,8 +19,8 @@ const Hero = () => {
               courses designed to elevate your skills and knowledge.
             </p>
             <div className="hero-buttons">
-              <ExploreButton />
-              <SignupButton />
+              <ButtonA text="Explore"/>
+              <ButtonB text="Sign Up"/>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './ContactUs.css';
+import LinkA from '../../../components/buttons/LinkA/LinkA'; // Assuming LinkA is a custom component for links
 
 const ContactUs = () => {
   return (
@@ -86,9 +87,7 @@ const ContactUs = () => {
                 <div className="contact-details">
                   <h3>Office</h3>
                   <p>456 Learning Ave, Sydney NSW 2000 AU</p>
-                  <button className="directions-link">
-                    Get Directions →
-                  </button>
+                  <LinkA text="Get Directions" href="https://www.google.com/maps/place/456+Learning+Ave,+Sydney+NSW+2000,+Australia" target="_blank"/>
                 </div>
               </div>
             </div>

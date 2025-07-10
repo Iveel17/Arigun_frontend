@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CourseModal.css';
+import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const CourseModal = ({ course, isOpen, onClose }) => {
   if (!isOpen || !course) return null;
@@ -58,9 +59,7 @@ const CourseModal = ({ course, isOpen, onClose }) => {
               <span className="detail-value">{course.instructor}</span>
             </div>
           </div>
-          <button className="modal-enroll-btn">
-            <Link to={`/courses/${course.id}`} className="enroll-link">Enroll</Link>
-          </button>          
+          <ButtonA text="Buy" className="course-modal-btn"/>
         </div>
       </div>
       </div>
