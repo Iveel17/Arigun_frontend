@@ -6,18 +6,16 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: transparent;
+  background-color: #ffffff;
   color: #333;
   border: 2px solid #ddd;
 }
 
 .button-a:hover {
-  background-color: #ffffff;
   border-color: #007bff;
 }
 
 .button-a:active {
-  background-color: #f8f9fa;
   border-color: #0056b3;
 }
 
