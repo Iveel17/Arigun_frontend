@@ -8,7 +8,7 @@ const AuthSection = () => {
         <div className="auth-section">
             <div className="auth-buttons">
                 <ButtonA text="Log In" to='/login'/>
-                <ButtonB text="Join Us"/>
+                <ButtonB text="Join Us" to='/signup'/>
             </div>
         </div>
     );

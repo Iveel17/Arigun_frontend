@@ -19,8 +19,8 @@ const Hero = () => {
               courses designed to elevate your skills and knowledge.
             </p>
             <div className="hero-buttons">
-              <ButtonA text="Explore"/>
-              <ButtonB text="Sign Up"/>
+              <ButtonA text="Explore" to='/courses'/>
+              <ButtonB text="Sign Up" to='/signup'/>
             </div>
           </div>
         </div>

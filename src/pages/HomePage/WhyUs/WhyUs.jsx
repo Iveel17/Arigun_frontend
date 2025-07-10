@@ -24,7 +24,7 @@ const WhyUs = () => {
             <p className="feature-description">
               Customize your learning journey with schedules that fit your lifestyle.
             </p>
-            <LinkA text="Explore"/>
+            <LinkA text="Explore" to='/courses'/>
           </div>
 
           <div className="feature-item">
@@ -39,7 +39,7 @@ const WhyUs = () => {
             <p className="feature-description">
               Customize your learning journey with schedules that fit your lifestyle.
             </p>
-            <LinkA text="Explore"/>
+            <LinkA text="Explore" to='/live-lessons'/>
           </div>
 
           <div className="feature-item">
@@ -54,7 +54,7 @@ const WhyUs = () => {
             <p className="feature-description">
               Access a wealth of resources that enhance your understanding and retention.
             </p>
-            <LinkA text="Explore"/>
+            <LinkA text="Explore" to='/products'/>
           </div>
         </div>
       </div>
