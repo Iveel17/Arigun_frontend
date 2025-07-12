@@ -61,7 +61,7 @@ const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
               <span className="detail-value">{live_lesson.students}/{live_lesson.totalStudents}</span>
             </div>
           </div>
-          <ButtonA text="Buy" className="live_lesson-modal-btn"  onClick={() => addToCart(live_lesson)}/>        
+          <ButtonA text="Buy" className="live_lesson-modal-btn"  onClick={() => addToCart(live_lesson, 'live-lesson')}/>        
         </div>
       </div>
       </div>

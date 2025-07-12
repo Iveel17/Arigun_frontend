@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
               <span className="original-price">${product.originalPrice}</span>
             )}
           </div>
-          <ButtonA text="Buy" className="product-btn" onClick={() => addToCart(product)}/>
+          <ButtonA text="Buy" className="product-btn" onClick={() => addToCart(product, 'product')}/>
         </div>
         
       </div>

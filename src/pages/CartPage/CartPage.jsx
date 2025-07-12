@@ -8,11 +8,24 @@ import './CartPage.css';
 const CartPage = () => {
     const { cartItems, updateQuantity, removeFromCart, calculateTotal } = useContext(CartContext);
 
-    const handleQuantityChange = (id, newQuantity) => {
+    const handleQuantityChange = (id, type, newQuantity) => {
         if (newQuantity <= 0) {
-            removeFromCart(id);
+            removeFromCart(id, type);
         } else {
-            updateQuantity(id, newQuantity);
+            updateQuantity(id, type, newQuantity);
+        }
+    };
+
+    const getItemTypeDisplay = (type) => {
+        switch (type) {
+            case 'course':
+                return '📚 Course';
+            case 'live-lesson':
+                return '🎥 Live Lesson';
+            case 'product':
+                return '🛍️ Product';
+            default:
+                return '📦 Item';
         }
     };
 
@@ -28,7 +41,7 @@ const CartPage = () => {
                 <>
                     <div className="cart-items">
                         {cartItems.map((item) => (
-                            <div key={item.id} className="cart-item">
+                            <div key={`${item.id}-${item.type}`} className="cart-item">
                                 <div className="item-details">
                                     <img 
                                         src={item.image} 
@@ -39,29 +52,43 @@ const CartPage = () => {
                                         <div className="item-header">
                                             <div className="title-price-group">
                                                 <h3>#{item.id} {item.title}</h3>
+                                                <p className="item-type">{getItemTypeDisplay(item.type)}</p>
                                                 <p className="item-price">${item.price}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="quantity-controls">
-                                    <button 
-                                        className="quantity-btn"
-                                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
-                                        aria-label="Decrease quantity"
-                                    >
-                                        -
-                                    </button>
-                                    <span className="quantity-display">{item.quantity}</span>
-                                    <button 
-                                        className="quantity-btn"
-                                        onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                                        aria-label="Increase quantity"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                                <ButtonA text="Remove" className="remove-btn" onClick={() => removeFromCart(item.id)} />
+                                
+                                {/* Only show quantity controls for products */}
+                                {item.type === 'product' ? (
+                                    <div className="quantity-controls">
+                                        <button 
+                                            className="quantity-btn"
+                                            onClick={() => handleQuantityChange(item.id, item.type, item.quantity - 1)}
+                                            aria-label="Decrease quantity"
+                                        >
+                                            -
+                                        </button>
+                                        <span className="quantity-display">{item.quantity}</span>
+                                        <button 
+                                            className="quantity-btn"
+                                            onClick={() => handleQuantityChange(item.id, item.type, item.quantity + 1)}
+                                            aria-label="Increase quantity"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div className="quantity-controls">
+                                        <span className="quantity-display-fixed">Quantity: {item.quantity}</span>
+                                    </div>
+                                )}
+                                
+                                <ButtonA 
+                                    text="Remove" 
+                                    className="remove-btn" 
+                                    onClick={() => removeFromCart(item.id, item.type)} 
+                                />
                             </div>
                         ))}
                     </div>

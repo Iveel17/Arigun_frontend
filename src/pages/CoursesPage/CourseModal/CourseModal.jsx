@@ -62,7 +62,7 @@ const CourseModal = ({ course, isOpen, onClose }) => {
               <span className="detail-value">{course.instructor}</span>
             </div>
           </div>
-          <ButtonA text="Buy" className="course-modal-btn" onClick={() => addToCart(course)}/>
+          <ButtonA text="Buy" className="course-modal-btn" onClick={() => addToCart(course, 'course')}/>
         </div>
       </div>
       </div>
