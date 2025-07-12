@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../../components/partials/Header/Header';
 import './CartPage.css';
 
 const CartPage = () => {
@@ -23,6 +24,7 @@ const CartPage = () => {
 
     return (
         <div className="cart-container">
+            <Header />
             <h1>Shopping Cart</h1>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty</p>
