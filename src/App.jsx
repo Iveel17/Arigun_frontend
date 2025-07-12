@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import CartPage from './pages/CartPage/CartPage';
 import CoursePage from './pages/CoursesPage/CoursePage/CoursePage';
-import MyOrdersPage from './pages/MyOrdersPage/MyOrdersPage';
+import MyGoodsPage from './pages/MyGoodsPage/MyGoodsPage';
 import './App.css';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="/my-orders" element={<MyOrdersPage />} />
+        <Route path="/my-goods" element={<MyGoodsPage />} />
         <Route path="/courses/:id" element={<CoursePage />} />
         {/* Add more routes here as needed */}        
       </Routes>

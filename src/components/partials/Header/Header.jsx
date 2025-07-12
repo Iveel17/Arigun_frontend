@@ -21,7 +21,7 @@ const Header = () => {
           <Link to='/live-lessons' className="nav-link">Live-lessons</Link>
           <Link to='/about' className="nav-link">About</Link>
           <Link to='/cart' className="nav-link">🛒</Link>
-          <Link to='/my-orders' className="nav-link">My orders</Link>
+          <Link to='/my-goods' className="nav-link">My goods</Link>
         </nav>
 
         {/* Auth Buttons */}

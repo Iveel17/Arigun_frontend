@@ -1,0 +1,61 @@
+.my-goods-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin-top: 100px;
+}
+
+.my-goods-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.goods-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.goods-card:hover {
+    transform: scale(1.05);
+}
+
+.goods-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.goods-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.delivered {
+    color: green;
+}
+
+.status.in-transit {
+    color: orange;
+}
+
+.status.processing {
+    color: blue;
+}
