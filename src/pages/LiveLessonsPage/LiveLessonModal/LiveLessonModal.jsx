@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 import './LiveLessonModal.css';
 import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
   if (!isOpen || !live_lesson) return null;
+
+  const { addToCart } = useContext(CartContext);
 
   // Calculate discount percentage
   const discountPercentage = live_lesson.originalPrice 
@@ -58,7 +61,7 @@ const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
               <span className="detail-value">{live_lesson.students}/{live_lesson.totalStudents}</span>
             </div>
           </div>
-          <ButtonA text="Buy" className="live_lesson-modal-btn"/>        
+          <ButtonA text="Buy" className="live_lesson-modal-btn"  onClick={() => addToCart(live_lesson)}/>        
         </div>
       </div>
       </div>

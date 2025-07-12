@@ -1,52 +1,73 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 import Header from '../../components/partials/Header/Header';
+import ButtonA from '../../components/buttons/ButtonA/ButtonA';
+import ButtonB from '../../components/buttons/ButtonB/ButtonB';
 import './CartPage.css';
 
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([
-        { id: 1, name: 'Product 1', price: 29.99, quantity: 1 },
-        { id: 2, name: 'Product 2', price: 39.99, quantity: 2 },
-    ]);
+    const { cartItems, updateQuantity, removeFromCart, calculateTotal } = useContext(CartContext);
 
-    const updateQuantity = (id, newQuantity) => {
-        setCartItems(cartItems.map(item =>
-            item.id === id ? { ...item, quantity: Math.max(0, newQuantity) } : item
-        ));
-    };
-
-    const removeItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-    };
-
-    const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const handleQuantityChange = (id, newQuantity) => {
+        if (newQuantity <= 0) {
+            removeFromCart(id);
+        } else {
+            updateQuantity(id, newQuantity);
+        }
     };
 
     return (
         <div className="cart-container">
             <Header />
-            <h1>Shopping Cart</h1>
+            <h1 className="cart-title">Shopping Cart</h1>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty</p>
+                <div className="empty-cart">
+                    <p>Your cart is empty</p>
+                </div>
             ) : (
                 <>
                     <div className="cart-items">
-                        {cartItems.map(item => (
+                        {cartItems.map((item) => (
                             <div key={item.id} className="cart-item">
-                                <h3>{item.name}</h3>
-                                <p>Price: ${item.price}</p>
-                                <div className="quantity-controls">
-                                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
-                                    <span>{item.quantity}</span>
-                                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                                <div className="item-details">
+                                    <img 
+                                        src={item.image} 
+                                        alt={item.title}
+                                        className="cart-item-image"
+                                    />
+                                    <div className="item-info">
+                                        <div className="item-header">
+                                            <div className="title-price-group">
+                                                <h3>#{item.id} {item.title}</h3>
+                                                <p className="item-price">${item.price}</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button onClick={() => removeItem(item.id)}>Remove</button>
+                                <div className="quantity-controls">
+                                    <button 
+                                        className="quantity-btn"
+                                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                                        aria-label="Decrease quantity"
+                                    >
+                                        -
+                                    </button>
+                                    <span className="quantity-display">{item.quantity}</span>
+                                    <button 
+                                        className="quantity-btn"
+                                        onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                                        aria-label="Increase quantity"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                                <ButtonA text="Remove" className="remove-btn" onClick={() => removeFromCart(item.id)} />
                             </div>
                         ))}
                     </div>
                     <div className="cart-summary">
                         <h2>Total: ${calculateTotal().toFixed(2)}</h2>
-                        <button className="checkout-button">Proceed to Checkout</button>
+                        <ButtonB text="Proceed to Checkout" className="checkout-btn" onClick={() => alert('Checkout functionality not implemented yet')} />
                     </div>
                 </>
             )}

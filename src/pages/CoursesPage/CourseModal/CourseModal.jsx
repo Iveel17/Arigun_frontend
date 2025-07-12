@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 import { Link } from 'react-router-dom';
 import './CourseModal.css';
 import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
 const CourseModal = ({ course, isOpen, onClose }) => {
   if (!isOpen || !course) return null;
+
+  const { addToCart } = useContext(CartContext);
 
   // Calculate discount percentage
   const discountPercentage = course.originalPrice 
@@ -59,7 +62,7 @@ const CourseModal = ({ course, isOpen, onClose }) => {
               <span className="detail-value">{course.instructor}</span>
             </div>
           </div>
-          <ButtonA text="Buy" className="course-modal-btn"/>
+          <ButtonA text="Buy" className="course-modal-btn" onClick={() => addToCart(course)}/>
         </div>
       </div>
       </div>

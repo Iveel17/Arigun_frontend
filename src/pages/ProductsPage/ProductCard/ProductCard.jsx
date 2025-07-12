@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { CartContext } from '../../../context/CartContext';
 import './ProductCard.css';
 import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 
@@ -7,6 +8,7 @@ const ProductCard = ({ product }) => {
   if (!product) {
     return null;
   }
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-card">
@@ -23,7 +25,7 @@ const ProductCard = ({ product }) => {
               <span className="original-price">${product.originalPrice}</span>
             )}
           </div>
-          <ButtonA text="Buy" className="product-btn"/>
+          <ButtonA text="Buy" className="product-btn" onClick={() => addToCart(product)}/>
         </div>
         
       </div>
