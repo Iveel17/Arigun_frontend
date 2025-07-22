@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import Header from '../../components/partials/Header/Header';
 import ButtonA from '../../components/buttons/ButtonA/ButtonA';
@@ -7,6 +8,7 @@ import './CartPage.css';
 
 const CartPage = () => {
     const { cartItems, updateQuantity, removeFromCart, calculateTotal } = useContext(CartContext);
+    const navigate = useNavigate();
 
     const handleQuantityChange = (id, type, newQuantity) => {
         if (newQuantity <= 0) {
@@ -14,6 +16,10 @@ const CartPage = () => {
         } else {
             updateQuantity(id, type, newQuantity);
         }
+    };
+
+    const handleCheckout = () => {
+        navigate('/cart/payment');
     };
 
     const getItemTypeDisplay = (type) => {
@@ -94,7 +100,11 @@ const CartPage = () => {
                     </div>
                     <div className="cart-summary">
                         <h2>Total: ${calculateTotal().toFixed(2)}</h2>
-                        <ButtonB text="Proceed to Checkout" className="checkout-btn" onClick={() => alert('Checkout functionality not implemented yet')} />
+                        <ButtonB 
+                            text="Proceed to Checkout" 
+                            className="checkout-btn" 
+                            onClick={handleCheckout} 
+                        />
                     </div>
                 </>
             )}

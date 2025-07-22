@@ -11,6 +11,7 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import CartPage from './pages/CartPage/CartPage';
 import CoursePage from './pages/CoursesPage/CoursePage/CoursePage';
 import MyGoodsPage from './pages/MyGoodsPage/MyGoodsPage';
+import PaymentPage from './pages/CartPage/PaymentPage/';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="cart" element={<CartPage />} />
             <Route path="/my-goods" element={<MyGoodsPage />} />
             <Route path="/courses/:id" element={<CoursePage />} />
+            <Route path="/cart/payment" element={<PaymentPage />} />
             {/* Add more routes here as needed */}        
           </Routes>
         </Router>
