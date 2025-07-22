@@ -6,18 +6,20 @@ import ButtonA from '../../../components/buttons/ButtonA/ButtonA';
 import NotificationToast from '../../../components/NotificationToast/NotificationToast';
 
 const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
+  // All hooks must be called unconditionally at the top level
   const [notification, setNotification] = useState({
     isVisible: false,
     message: '',
     type: 'success'
   });
 
-  if (!isOpen || !live_lesson) return null;
-
   const { addToCart } = useContext(CartContext);
 
+  // Now you can have your early return
+  if (!isOpen || !live_lesson) return null;
+
   // Calculate discount percentage
-  const discountPercentage = live_lesson.originalPrice 
+  const discountPercentage = live_lesson.originalPrice
     ? Math.round(((live_lesson.originalPrice - live_lesson.price) / live_lesson.originalPrice) * 100)
     : 0;
 
@@ -55,10 +57,10 @@ const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
           <button className="live_lesson-modal-close" onClick={onClose}>
             ×
           </button>
-          
+
           <div className="live_lesson-modal-image-container">
-          <img 
-            src={live_lesson.image} 
+          <img
+            src={live_lesson.image}
             alt={live_lesson.title}
             className="live_lesson-modal-image"
           />
@@ -85,22 +87,22 @@ const LiveLessonModal = ({ live_lesson, isOpen, onClose }) => {
                 <span className="detail-icon">⏲️</span>
                 <span className="detail-value">{live_lesson.duration}</span>
               </div>
-              
+
               <div className="live_lesson-modal-detail-item">
                 <span className="detail-icon">👩‍🏫</span>
                 <span className="detail-value">{live_lesson.instructor}</span>
               </div>
             </div>
-            <ButtonA 
-              text="Buy" 
-              className="live_lesson-modal-btn" 
+            <ButtonA
+              text="Buy"
+              className="live_lesson-modal-btn"
               onClick={handleBuyClick}
             />
           </div>
         </div>
         </div>
       </div>
-      
+
       <NotificationToast
         message={notification.message}
         isVisible={notification.isVisible}
